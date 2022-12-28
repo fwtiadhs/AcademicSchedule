@@ -1,0 +1,50 @@
+﻿<!-- [PANTELIS] You must declare the class of the Model object that is given by the controller --->
+@model AcademicSchedule.Models.CExampleDM
+@{
+    ViewData["Title"] = "Example Data View";
+}
+<div class="container-eleni">
+    <div class="row">
+        <h1>Φόρτωση/Εμφάνιση Δεδομένων</h1>
+        <div>
+            <p>
+                Σε αυτό το παράδειγμα έχουμε ένα μοντέλο στο οποίο φορτώνουμε δεδομένα από MSSQL με χρήση transact SQL τα οποία τα εμφανίζουμε κατόπιν στην view.
+            </p>
+        </div>
+    </div>
+
+    <!-- [PANTELIS] Example of variable in Razor, foreach loop, and if branching --->
+    @{ double nTotalAmount = 0; }
+    @foreach (var oRow in Model.Examples)
+    {
+        nTotalAmount += oRow.Amount;
+        <div class="row">
+            <div class="col-sm-3 col-md-2">
+                <p class="@oRow.CSSClass">
+                    @oRow.Code
+                </p>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <p class="@oRow.CSSClass">
+                    @oRow.Description
+                </p>
+            </div>
+            <div class="col-sm-3 col-md-2">
+                <p>
+                    @if (oRow.IsActive)
+                    {
+                        <a asp-action="Clone" asp-route-p_sCode=@oRow.Code class="btn btn-sm btn-primary">Εισαγωγή Αντιγράφου</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-sm btn-primary disabled">Εισαγωγή Αντιγράφου</a>
+                    }
+                </p>
+            </div>
+        </div>
+    }
+
+    <div class="row">
+        <p>Total Amount = @nTotalAmount.ToString("#.00")</p>
+    </div>
+</div>

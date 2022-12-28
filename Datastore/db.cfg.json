@@ -1,0 +1,8 @@
+{
+	"DBServer"		: "127.0.0.1",
+	"DBHost"		: "127.0.0.1",
+	"DBPort"		: 1433,
+	"DBName"		: "academisc",
+	"DBUser"		: "tempuser",
+	"DBPassword"	: "tempuser"
+}		 

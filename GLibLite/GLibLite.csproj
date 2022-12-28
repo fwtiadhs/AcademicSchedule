@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>GLib</RootNamespace>
+    <Version>1.1.0</Version>
+    <Authors>Pantelis I. Kaplanoglou</Authors>
+    <Company>Pantelis I. Kaplanoglou</Company>
+    <Product>GLib Lite Edition</Product>
+    <Copyright>(c) 2020,2021 Pantelis I. Kaplanoglou</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+    <PackageReference Include="System.Text.Json" Version="5.0.2" />
+  </ItemGroup>
+
+</Project>

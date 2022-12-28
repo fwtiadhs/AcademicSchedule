@@ -1,0 +1,39 @@
+﻿    
+@model AcademicSchedule.Models.CDimitrisDM
+@{
+    ViewData["Title"] = "Dimitris Data View";
+  
+ }
+
+
+<div class="container-eleni">
+    <div class="row ">
+        <h1>Παράδειγμα Δημήτρης</h1>
+        <div>
+            <p>
+                <br />
+                Τεστ
+            </p>
+        </div>
+    </div>
+
+
+    @foreach (var oRow in Model.Dimitriss)
+    {
+
+        <div class="row">
+            <div class="col-sm-3 col-md-2">
+                <p "@oRow.CSSClasss">
+                    @oRow.Code
+                </p>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <p "@oRow.CSSClasss">
+                    @oRow.Movie
+                </p>
+            </div>
+
+        </div>
+
+    }
+</div>

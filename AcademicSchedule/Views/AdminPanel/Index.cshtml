@@ -1,0 +1,33 @@
+﻿@model AcademicSchedule.Models.CAdminPanelDM
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+<link rel="stylesheet" href="~/css/admin1.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+@{var nSemesters = Model.AdminPanel.Select(x => x.Semester).Distinct().ToList();}
+<div class="container-test">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+
+
+        @foreach (var nSemester in nSemesters)
+        {
+            var oGroups = Model.AdminPanel.Where(x => x.Semester == nSemester).ToList();
+
+            <li class="nav-item" role="presentation"><button class="nav-link" asp-action="AdminPanel" asp-route-p_sSem=@nSemester> @nSemester Εξάμηνο</button></li>
+            
+        }
+
+
+    </ul>
+
+</div>
+<div>
+    
+    <ul>
+        <li></li>
+    </ul>
+
+
+</div>

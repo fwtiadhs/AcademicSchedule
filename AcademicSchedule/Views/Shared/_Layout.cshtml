@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- [PANTELIS] Example of value from viewdata, for sending values from custom implementation to the common layout template --->
+    <title>@ViewData["Title"] - AcademicSchedule</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="wrapper-all">
+        <header>
+            <nav class="navbar-test">
+                <div class="logo">
+                    <img class="ihu-img" src="~/lib/IHU_logo_blue_en-removebg-preview-white.png" />
+                    <a asp-area="" asp-controller="Home" asp-action="Index">AcademicSchedule</a>
+                </div>
+                <div class="nav-test">
+                    <ul class="menu-list">
+                        <li class="li-active">
+                            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
+                        <li>
+                            <a asp-area="" asp-controller="Registration" asp-action="">Registration</a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="AdminPanel" asp-action="">Admin Panel</a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </header>
+        <footer class="footeraki">
+            <div class="container">
+                &copy; 2021 - AcademicSchedule - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+        
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+    </html>
